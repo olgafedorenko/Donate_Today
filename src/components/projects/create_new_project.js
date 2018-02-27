@@ -34,7 +34,16 @@ class NewProject extends Component {
         postProject(this.state.name_value, this.state.amount_value, 
             this.state.total_amount_value, this.state.node_id, this.state.user_id, 
             this.state.about_value, this.state.city_value, this.state.url, this.state.user_name)
-        
+        this.setState({
+            name_value:"",
+            about_value:"",
+            total_amount_value:"",
+            amount_value:"",
+            node_id:"",
+            user_id:"",
+            user_name:""
+        });
+        this.props.router.push({pathname:"my_page"})   
     }
     handleChangeName(event) {
         this.setState({

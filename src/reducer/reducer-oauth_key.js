@@ -11,4 +11,4 @@ const oauth_info = (state = [], action) => {
     }
 }
 
-export default oauth_info
+export default oauth_info;

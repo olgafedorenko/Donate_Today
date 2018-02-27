@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { Form, Col, FormControl, FormGroup, ControlLabel, Button } from "react-bootstrap"
 
 import {postUser} from "../../actions/user/post_user"
 
-export default class SignUpForm extends Component {
+class SignUpForm extends Component {
     constructor(props) {
         super(props);
         this.state ={
@@ -19,18 +20,19 @@ export default class SignUpForm extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        postUser(this.state.name_value, this.state.email_value, this.state.phone_value, this.state.ssn_value.slice(this.state.ssn_value.length-4, 4))
+        this.props.postUser(this.state.name_value, this.state.email_value, this.state.phone_value, this.state.ssn_value.slice(this.state.ssn_value.length-4, 4))
             .then((response) => {
                     this.setState({
-                        userDetails:response.users[0]
+                        userDetails:response.payload.users[0]
                     })
+                    this.props.router.push({pathname:"my_page"})
             })
             this.setState({
                 name_value: '',
                 ssn_value:"",
                 phone_value:"",
                 email_value:""
-    });
+            });
     }
     handleChangeName(event){
         this.setState({
@@ -80,7 +82,7 @@ export default class SignUpForm extends Component {
                             Phone number
                         </Col>
                         <Col sm={10}>
-                            <FormControl   className = "form-input-signup" type ="number" placeholder="Phone number" value = {this.state.phone_value} 
+                            <FormControl  className = "form-input-signup" type ="number" placeholder="Phone number" value = {this.state.phone_value} 
                                 onChange={this.handleChangePhone.bind(this)} />
                         </Col>
                     </FormGroup>
@@ -165,3 +167,13 @@ export default class SignUpForm extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        userDetails: state.userDetails,
+        oauthKeyDetails: state.oauthKeyDetails,
+        nodeDetails: state.nodeDetails
+    };
+}
+  
+export default connect(mapStateToProps, {postUser})(SignUpForm);

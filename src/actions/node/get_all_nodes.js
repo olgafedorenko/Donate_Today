@@ -20,9 +20,9 @@ export const getAllNodesById = (user_id, oauth_key) => {
 }
 
 export const GET_NODE = 'GET_NODE';
-export function getAllNodes (user_id, refresh_token) {
+export function getAllNodes (user_id, oauth_key) {
     return {
         type: GET_NODE,
-        payload: getAllNodesById(user_id, refresh_token)
+        payload: getAllNodesById(user_id, oauth_key)
     }
 }

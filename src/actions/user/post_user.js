@@ -1,6 +1,7 @@
 
 import { SEVER_URL } from '../../modules/server_setting'
-export const postUser = (name, email, phone_number, SSN) => {
+
+export const postUserByName = (name, email, phone_number, SSN) => {
 
     const data = {
         "logins": [
@@ -53,8 +54,8 @@ export const postUser = (name, email, phone_number, SSN) => {
             "extra_security": false
             }
         }
-    return  (
-        
+    return new Promise((resolve, reject) => {
+            
         fetch(`${SEVER_URL}/v3.1/users`, {
             method: "POST",
             headers: {
@@ -66,5 +67,16 @@ export const postUser = (name, email, phone_number, SSN) => {
             body: JSON.stringify(data)
         }, {mode: 'cors'})
         .then(response => response.json())
-    )
+        .then((response) => {
+            resolve({...response});
+        })
+    })
+}
+
+export const POST_USER = 'POST_USER';
+export function postUser(userName) {
+    return {
+        type: POST_USER,
+        payload: postUserByName(userName)
+    }
 }

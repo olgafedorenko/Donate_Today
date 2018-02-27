@@ -41,7 +41,7 @@ import { getOauthKey } from "../../actions/oauth/get_oauth_key"
             this.props.getAllNodes(this.props.userDetails.data.users[0]._id, oauth_key)
             .then((response) => {
                 if(response.payload.node_count === 0){
-                    postNode(this.state.userId, oauth_key)
+                    this.props.postNode(this.state.userId, oauth_key)
                     .then((response) => {
                         this.setState({
                             node: response,
@@ -77,4 +77,4 @@ function mapStateToProps(state) {
     };
 }
   
-export default connect(mapStateToProps, {getAllNodes, getOauthKey})(Home_Page);
+export default connect(mapStateToProps, {getAllNodes, getOauthKey, postNode})(Home_Page);

@@ -1,7 +1,7 @@
 
 import { SEVER_URL } from '../../modules/server_setting'
 
-export const postNode = (user_id, oauth_key) => {
+export const postNodeById = (user_id, oauth_key) => {
     const data = {
         "type": "ACH-US",
         "info":{
@@ -10,7 +10,7 @@ export const postNode = (user_id, oauth_key) => {
             "bank_name":"fake"
         }
     }
-    return  (
+    return new Promise((resolve, reject) => {
         
         fetch(`${SEVER_URL}/v3.1/users/${user_id}/nodes`, {
             method: "POST",
@@ -24,7 +24,16 @@ export const postNode = (user_id, oauth_key) => {
         }, {mode: 'cors'})
 
         .then(response => response.json())
-    )
+        .then((response) => {
+            resolve({...response});
+        })
+    })
 }
 
-
+export const POST_NODE = 'POST_NODE';
+export function postNode (user_id, oauth_key) {
+    return {
+        type: POST_NODE,
+        payload: postNodeById(user_id, oauth_key)
+    }
+}
