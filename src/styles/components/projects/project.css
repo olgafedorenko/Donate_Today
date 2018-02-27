@@ -1,0 +1,152 @@
+.my-projects-wrapper{
+    display: flex;
+    margin: 20px;
+    height: 100%;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+.project-container{
+    margin-top: 20px;
+    width: 450px;
+    height: 600px;
+    padding-right: 30px;
+}
+.center{
+    margin: 0 auto;
+    width: 600px;
+    height: 700px;
+}
+.project-name{
+    margin-top: 10px;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 10px;
+}
+.project-name-user{
+    font-size: 1.1em;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.project-about{
+    margin-top: 10px;
+    font-size: 1.2em;
+    padding: 10px;
+    height: 113px;
+    overflow: scroll
+}
+
+
+/* city css */
+.marker{
+    width:30px;
+}
+.project-city, .participants-list{
+    margin-top: 10px;
+    font-size: 1.2em;
+    color:lightgray;
+}
+
+/* amount css */
+.amount-container{
+    margin-top: 10px;
+    background-color: #099DB1;
+    height: 40px;
+    color:white;
+    font-size: 1.2em;
+}
+.amount-wrapper{
+    padding: 10px;
+}
+.project-total_amount{
+    width: 60px;
+    float: right;
+}
+.project-amount{
+    float: left;
+    font-style: italic;
+}
+.progressbar-container{
+    margin-top:10px;
+    border: 1px solid #DBD5D5;
+}
+.progressbar-progress{
+    background-color: #099DB1 !important;
+    height: 20px !important;
+}
+
+/* participants */
+.participants{
+    max-height: 100px;
+    overflow: scroll;
+    font-size: 1.2em;
+    padding: 10px;
+}
+.participants-name{
+    padding-right: 5px;
+    color: gray;
+}
+.participants-amount{
+    float: right;
+    width: 70px;
+    font-style: italic;
+}
+
+.project-profile{
+    color: black;
+    text-decoration: none;
+}
+.project-profile:visited{
+    color: black;
+    text-decoration: none;
+}
+
+.donate-button{
+    margin: 10px auto;
+    width: 50%;
+}
+.donate-button > input{
+    width: 65px;
+    height: 32px;
+    margin-right: 10px;
+    font-size: 1.1em;
+    border: 1px  solid lightgray;
+}
+.donate-button .button-d {
+    height: 40px;
+    background-color: #099DB1;
+    color:white;
+    font-size: 1.1em;
+}
+.donation{
+    width: 450px;
+}
+.donation-details{
+    width: 600px;
+}
+
+@media screen and (max-width: 1024px) {
+    .project-profile{
+        margin: 15px auto;
+    }
+    .donate-button {
+        width: 200px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .project-container{
+        width: 100%;
+    }
+    .donation{
+        width: 100%;
+    }
+    .donation-details{
+        width: 100%;
+    }
+    .project-about{
+        width: 100%;
+        padding:20px 0 0 0;
+    }
+    .donate-button {
+        width: 200px;
+    }
+}

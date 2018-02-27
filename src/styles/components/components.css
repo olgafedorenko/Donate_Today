@@ -1,0 +1,19 @@
+ @import './header_and_footer/header.css';
+ @import './header_and_footer/footer.css';
+ @import './projects/project.css';
+ @import './panel/landing_page.css';
+
+
+ html,body{
+     height: 100%;
+ }
+.component{
+    margin-top: 49px;
+    padding-bottom: 30px;
+    position: relative;
+    min-height: 90vh;
+    overflow: scroll;
+}
+
+
+
