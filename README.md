@@ -22,4 +22,6 @@ To run an app:
      2. Run a program with "npm start"
      3. open http://localhost:3001 or http://localhost:3000 (depends if you have other running process)
      4. Make sure to turn on Google Chrome extenssion "Allow-Control-Allow-Origin"
+     
+     Existing names: "Olga Brown, Sam Brown, Tom Smit"
 
