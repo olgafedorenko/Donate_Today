@@ -68,7 +68,7 @@ export const postUserByName = (name, email, phone_number, SSN) => {
         }, {mode: 'cors'})
         .then(response => response.json())
         .then((response) => {
-            resolve({...response});
+            resolve({response});
         })
     })
 }

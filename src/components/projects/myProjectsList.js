@@ -22,11 +22,10 @@ class MyProjectsList extends Component {
             this.setState({
                 projects:results
             })
-        )
-        
+        )   
     }
 
-    render(){
+    render () {
         const id = this.props.userDetails.data.users[0]._id
         const my_projects = this.state.projects.filter((a) => a.user_id === id)
         return(

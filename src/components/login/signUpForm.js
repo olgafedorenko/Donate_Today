@@ -14,7 +14,9 @@ class SignUpForm extends Component {
             new_account: false,
             ssn_value:"",
             phone_value:"",
-            email_value:""
+            email_value:"",
+            message:"Looks like you don't have an account, please sign up",
+            sign_up:true
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -22,16 +24,18 @@ class SignUpForm extends Component {
     handleClick() {
         this.props.postUser(this.state.name_value, this.state.email_value, this.state.phone_value, this.state.ssn_value.slice(this.state.ssn_value.length-4, 4))
             .then((response) => {
+                console.log(response)
                     this.setState({
-                        userDetails:response.payload.users[0]
+                        userDetails:response.payload
                     })
-                    this.props.router.push({pathname:"my_page"})
             })
             this.setState({
                 name_value: '',
                 ssn_value:"",
                 phone_value:"",
-                email_value:""
+                email_value:"",
+                message:"Successful",
+                sign_up: false
             });
     }
     handleChangeName(event){
@@ -59,6 +63,7 @@ class SignUpForm extends Component {
         return (
             <div>
                 <Form horizontal>
+                    <p className = "error-message-new-acount"> {this.state.message} </p>
                     <FormGroup controlId="formControlsTextarea">
                         <Col className = "form-name" componentClass={ControlLabel} sm={2}>
                             Full Name
@@ -152,15 +157,14 @@ class SignUpForm extends Component {
                             <FormControl  className = "form-input-signup" type ="password" placeholder="Password" />
                         </Col>
                     </FormGroup>
-                    
-                        <FormGroup>
-                            <Col smOffset={2} sm={10}>
-                                <Button  className = "form-button signup" onClick = {this.handleClick}>Sign up</Button>
-                            </Col>
-                            
-                            
-                        
-                        </FormGroup>
+
+                    <FormGroup>
+                    {this.state.sign_up &&
+                        <Col smOffset={2} sm={10}>
+                            <Button  className = "form-button signup" onClick = {this.handleClick}>Sign up</Button>
+                        </Col>
+                    }
+                    </FormGroup>
                         
                 </Form>;
             </div>

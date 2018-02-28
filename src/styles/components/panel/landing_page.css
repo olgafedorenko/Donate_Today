@@ -46,6 +46,11 @@
 .form-horizontal{
     margin-left: 20px;
 }
+.error-message-new-acount{
+    text-align: center;
+    font-size: 1.4em;
+    color: grey;
+}
 @media screen and (max-width: 780px) {
     
 }

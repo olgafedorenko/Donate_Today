@@ -9,6 +9,7 @@ import Landing_Page from './components/panel/landing_page';
 import ProjectDetails from './components/projects/projectDetails';
 import MyProjectsList from './components/projects/myProjectsList';
 import NewProject from './components/projects/create_new_project';
+import SignUpForm from './components/login/signUpForm'
 
 
 class RouterComponent extends Component {
@@ -22,6 +23,7 @@ class RouterComponent extends Component {
                 <Route path="/" component={App} >
                 <IndexRoute component={Landing_Page} />
                 <Route path="/my_page" component={Home_Page} />
+                <Route path="/sign_up" component={SignUpForm} />
                 <Route path="project/:id" component={ProjectDetails} />
                 <Route path="my_projects" component ={ MyProjectsList} />
                 <Route path="create" component={NewProject} />

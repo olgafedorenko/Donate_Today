@@ -8,7 +8,7 @@ const user_info = (state = [], action) => {
         case GET_USER:
             return {state,  data }
         case POST_USER:
-            return {state,  data }
+            return {state,  data:{users:[data.response]} }
         default:
             return state
     }
