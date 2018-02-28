@@ -124,7 +124,7 @@ class ProjectDetails extends Component {
                     <span className = "project-total_amount">{this.state.projectInfo.total_amount} $</span>
                 </div>
                 
-                <div className = "project-about">
+                <div className = "project-about details">
                     <span>{this.state.projectInfo.about}</span>
                 </div>
                 {!this.state.button &&

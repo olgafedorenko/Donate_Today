@@ -34,6 +34,10 @@
     height: 113px;
     overflow: scroll
 }
+.details{
+    height: auto;
+    width: 100%
+}
 
 
 /* city css */
