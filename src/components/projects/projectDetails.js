@@ -127,7 +127,9 @@ class ProjectDetails extends Component {
                 <div className = "project-about">
                     <span>{this.state.projectInfo.about}</span>
                 </div>
-                <p className = "participants-list">Participants</p>
+                {!this.state.button &&
+                    <p className = "participants-list">Participants</p>
+                }
                 <div className = "participants">
                         {this.state.trans.map((user, index) =>
                             <div>
