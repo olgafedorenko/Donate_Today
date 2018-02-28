@@ -27,7 +27,8 @@ class ProjectDetails extends Component {
             project_id:"",
             my_node_id:undefined,
             new_amount:0,
-            button:true
+            button:true,
+            amount:0
         }
         this.addMoney = this.addMoney.bind(this)
     }
@@ -53,8 +54,9 @@ class ProjectDetails extends Component {
         const userId = this.props.params.id;
         getProject(userId)
             .then(response =>
-                this.setState({
-                    projectInfo:response
+                this.setState ({
+                    projectInfo: response,
+                    amount: response.amount
                 })
             )
     }
@@ -82,13 +84,15 @@ class ProjectDetails extends Component {
     }
     addMoney() {
         postTransactions(this.state.userId, this.state.send_money, this.state.my_node_id, this.state.node_id, this.state.oauth_key)
+        
+        const new_sum = parseFloat(this.state.projectInfo.amount)+parseFloat(this.state.send_money)
+        UpdateProject(new_sum,this.props.params.id )
         this.setState ({
             add_money: "Add more",
             new_amount:this.state.send_money,
-            send_money:""
+            send_money:"",
+            amount:new_sum
         })
-        const new_amount = parseFloat(this.state.projectInfo.amount)+parseFloat(this.state.send_money)
-        UpdateProject(new_amount,this.props.params.id )
     }
     
     
@@ -116,7 +120,7 @@ class ProjectDetails extends Component {
                 
                 <div className = "ammount">
                     <ProgressBar className = "progressBar" complete ={bar_complete}/>
-                    <span className = "project-receive_amount">{this.state.receive_amount_sum} $</span>
+                    <span className = "project-receive_amount">{this.state.amount} $</span>
                     <span className = "project-total_amount">{this.state.projectInfo.total_amount} $</span>
                 </div>
                 

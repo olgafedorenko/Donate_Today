@@ -36,8 +36,8 @@ class MyProjectsList extends Component {
                             key={index}
                             image = {item.image}
                             about = {item.about}
-                            ammount = {item.ammount}
-                            total_ammount ={item.total_ammount}
+                            ammount = {item.amount}
+                            total_ammount ={item.total_amount}
                             name = {item.name}
                             user_name = {item.participants}
                             id = {item.id}
