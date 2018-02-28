@@ -94,9 +94,6 @@ class ProjectDetails extends Component {
     
     render() {
 
-        console.log("user name", this.props.user_name)
-        console.log("props", this.props)
-
         const total = this.state.projectInfo.total_amount
         const have = parseFloat(this.state.projectInfo.amount)+parseFloat(this.state.new_amount)
         const bar_complete = have*100/total

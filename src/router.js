@@ -12,13 +12,11 @@ import NewProject from './components/projects/create_new_project';
 
 
 class RouterComponent extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-
     render() {
-        console.log("real props", this.props)
         return (
         <Router history={this.props.history} >
                 <Route path="/" component={App} >

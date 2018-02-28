@@ -59,7 +59,6 @@ import { getOauthKey } from "../../actions/oauth/get_oauth_key"
     }
 
     render () {
-        console.log("neeeeeee",  this.props)
         return (
             <div>
                 <ProjectsList />

@@ -14,7 +14,6 @@ class MyProjectsList extends Component {
         }
     }
     componentDidMount () {
-        console.log("bbbbbb", this.props)
         const id = this.props.userDetails.data.users[0]._id
     }
     componentWillMount () { 
@@ -28,7 +27,6 @@ class MyProjectsList extends Component {
     }
 
     render(){
-        console.log("ggggg", this.state.projects)
         const id = this.props.userDetails.data.users[0]._id
         const my_projects = this.state.projects.filter((a) => a.user_id === id)
         return(
