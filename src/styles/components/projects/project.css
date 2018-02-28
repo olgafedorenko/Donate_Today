@@ -61,6 +61,10 @@
     width: 60px;
     float: right;
 }
+.project-receive_amount{
+    width: 60px;
+    float: left;
+}
 .project-amount{
     float: left;
     font-style: italic;

@@ -119,6 +119,7 @@ class ProjectDetails extends Component {
                 
                 <div className = "ammount">
                     <ProgressBar className = "progressBar" complete ={bar_complete}/>
+                    <span className = "project-receive_amount">{this.state.receive_amount_sum} $</span>
                     <span className = "project-total_amount">{this.state.projectInfo.total_amount} $</span>
                 </div>
                 
