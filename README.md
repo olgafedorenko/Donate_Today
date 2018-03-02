@@ -1,6 +1,6 @@
 # Donate_Today
 
-![alt text](https://github.com/olgafedorenko/Donate_Today/blob/master/public/img/home_page.png)
+![alt text](https://github.com/olgafedorenko/Donate_Today/blob/master/public/img/home_page_screenshot.png)
 
 
 My project Donate_Today helps people to donate money to others who needs.You can create your own projects or send money whom needs it. 
