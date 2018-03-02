@@ -19,7 +19,7 @@ class ProjectComponent extends Component {
             <Link to={{pathname:`/project/${this.props.id}`, state: { detail: this.props }}} className='project-profile'>
             <div className = "project-container">
                 <div className = "project-image">
-                <img alt ="donation"  className = "donation" src = {'/img/donations.jpg'} />
+                <img alt = {"donation"}  className = "donation" src = {this.props.image} />
                 </div>
                 <div className = "project-name">
                     <span >{this.props.name}</span>

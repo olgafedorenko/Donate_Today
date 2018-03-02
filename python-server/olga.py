@@ -39,6 +39,7 @@ def post_project(id):
         if k in {'amount', 'total_amount'}:
             value = int(value)
         setattr(project, k, value)
+    db_session.commit()
     return json.dumps(project.json()), 200
 
 if __name__ == '__main__':

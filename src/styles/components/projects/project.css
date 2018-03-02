@@ -125,11 +125,19 @@
     color:white;
     font-size: 1.1em;
 }
-.donation{
+.project-image{
     width: 500px;
+    height: 300px;
 }
-.donation-details{
+.donation{
+    width: 400px;
+    height: 300px;
+    display:block;
+    margin: 0 auto;
+}
+.donation-details, .project-image-details{
     width: 600px;
+    height: 400px;
 }
 
 @media screen and (max-width: 1024px) {

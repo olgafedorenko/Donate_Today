@@ -10,14 +10,15 @@ class NewProject extends Component {
         super(props);
         this.state ={
             userDetails:null,
-            name_value:"",
+            name_value: "",
             new_account: false,
-            about_value:"",
-            total_amount_value:"",
-            amount_value:"",
-            node_id:"",
-            user_id:"",
-            user_name:""
+            about_value: "",
+            total_amount_value: "",
+            amount_value: "",
+            node_id: "",
+            user_id: "",
+            user_name: "",
+            image: ""
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -33,7 +34,7 @@ class NewProject extends Component {
     handleClick() {
         postProject(this.state.name_value, this.state.amount_value, 
             this.state.total_amount_value, this.state.node_id, this.state.user_id, 
-            this.state.about_value, this.state.city_value, this.state.url, this.state.user_name)
+            this.state.about_value, this.state.city_value, this.state.url, this.state.user_name, this.state.image)
         this.setState({
             name_value:"",
             about_value:"",
@@ -41,7 +42,8 @@ class NewProject extends Component {
             amount_value:"",
             node_id:"",
             user_id:"",
-            user_name:""
+            user_name:"",
+            image: ""
         });
         this.props.router.push({pathname:"my_page"})   
     }
@@ -68,6 +70,11 @@ class NewProject extends Component {
     handleChangeCity(event) {
         this.setState({
             city_value: event.target.value
+        }); 
+    }
+    handleChangeImage(event) {
+        this.setState({
+            image: event.target.value
         }); 
     }
     
@@ -119,6 +126,15 @@ class NewProject extends Component {
                         <Col sm={10}>
                             <FormControl  className = "form-input-signup"  type ="textarea" value = {this.state.about_value} 
                                 onChange={this.handleChangeAbout.bind(this)} />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup controlId="formControlsPicture">
+                        <Col className = "form-name" componentClass={ControlLabel} sm={2}>
+                            Image
+                        </Col>
+                        <Col sm={10}>
+                            <FormControl  className = "form-input-signup"  type ="text" value = {this.state.image} 
+                                onChange={this.handleChangeImage.bind(this)} />
                         </Col>
                     </FormGroup>
                     <FormGroup>

@@ -1,5 +1,5 @@
 
-export const postProject = (name, amount, total_amount, node_id, user_id, about, city, url, user_name) => {
+export const postProject = (name, amount, total_amount, node_id, user_id, about, city, url, user_name, image) => {
         var formData = new FormData();
         formData.append('amount', `${amount}`);
         formData.append("about", `${about}`);
@@ -10,7 +10,7 @@ export const postProject = (name, amount, total_amount, node_id, user_id, about,
         formData.append("name", `${name}`);
         formData.append("currency", "USD");
         formData.append("participants", `${user_name}`);
-        formData.append("image",null);
+        formData.append("image", `${image}`);
     return  (
         
         fetch(`http://127.0.0.1:5000/create_project`, {

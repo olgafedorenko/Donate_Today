@@ -29,6 +29,7 @@ class Projects(Base):
     image = Column(String(500))
     node_id = Column(String(500))
     user_id = Column(String(500))
+    user_name = Column(String(500))
 
     def json(self):
         return {
@@ -42,5 +43,6 @@ class Projects(Base):
             'participants': self.participants,
             'image': self.image,
             'node_id': self.node_id,
-            'user_id': self.user_id
+            'user_id': self.user_id,
+            'user_name': self.user_name
         }

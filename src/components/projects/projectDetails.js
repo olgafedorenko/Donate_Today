@@ -64,7 +64,6 @@ class ProjectDetails extends Component {
         if ( this.state.project_id === this.state.userId ) {
             getAllNodesTransactions(this.state.userId, this.state.node_id, this.state.oauth_key)
             .then((response) => {
-                
                 const receive_money = response.trans.filter((a) => a.from.user._id !== this.state.userId)
                 const receive_amount = (receive_money.map(item => item.amount.amount))
                 const receive_amount_sum = receive_amount.reduce((a,b) => a+b, 0)
@@ -104,8 +103,8 @@ class ProjectDetails extends Component {
 
         return (
             <div className = "project-container center">
-                <div className = "project-image">
-                <img alt ="donation"  className = "donation-details" src = {'/img/donations.jpg'} />
+                <div className = "project-image-details">
+                <img alt = {"donation"}  className = "donation-details" src = {this.state.projectInfo.image} />
                 </div>
                 <div className = "project-name">
                     <span>{this.state.projectInfo.name}</span>
